@@ -3,5 +3,172 @@
 // Base Styles
 //
 // ======================================
-html, body {
+* {
+	box-sizing: border-box;
+	font-family: 'Merriweather', serif;
+	font-size: 1em;
+	margin: 0;
+	padding: 0;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Belleza', sans-serif;
+}
+h1 {
+	font-size: 4rem;
+	line-height: 3.5rem;
+}
+h2 {
+	font-size: 2rem;
+	line-height: 2.35rem;
+}
+h3 {
+	font-size: 1.5rem;
+}
+h4 {
+	font-size: 1.5rem;
+}
+ul, li {
+	list-style: none;
+}
+p, li {
+	letter-spacing: .16px;
+	line-height: 2rem;
+}
+/*******************************
+GLOBAL
+*******************************/
+.clearfix {
+	clear: both;
+}
+.half-op {
+	opacity: .5;
+}
+.two-op {
+	opacity: .2;
+}
+.script {
+	font-family: 'Kaushan Script', cursive;
+}
+.small-text {
+	font-size: .75em;
+	line-height: 1.5em;
+}
+.source {
+	margin-left: 30px;
+	margin-top: 5px;
+}
+.lg-icon {
+	font-size: 50px;
+}
+
+/******************************
+COLOR STYLES
+******************************/
+.border-gray {
+	border: 1px solid #ddd;
+}
+.slate {
+	color: #333;
+}
+.steel {
+  color: #3e6a81; }
+
+.steel-bg {
+  background: #3e6a81;
+  border: 3px solid #3e6a81; }
+
+.steel-bg:hover {
+  color: #3e6a81; }
+
+.teal {
+  color: #009676; }
+
+.teal-bg {
+  background: #009676;
+  border: 3px solid #009676; }
+
+.teal-bg:hover {
+  color: #009676; }
+
+.flame {
+  color: #de5721; }
+
+.flame-bg {
+  background: #de5721;
+  border: 3px solid #de5721; }
+
+.flame-bg:hover {
+  color: #de5721; }
+
+.fern {
+  color: #62af6f; }
+
+.fern-bg {
+  background: #62af6f;
+  border: 3px solid #62af6f; }
+
+.fern-bg:hover {
+  color: #62af6f; }
+
+
+/*******************************
+BUTTONS
+*******************************/
+
+.btn {
+  display: inline-block;
+  padding: 1.25em 3em;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8em;
+  letter-spacing: 0.05em;
+  margin-top: 2.5em;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -moz-transition: all 200ms ease;
+  -webkit-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease; }
+
+.btn:hover {
+  background: transparent;
+  -moz-transition: all 200ms ease;
+  -webkit-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease; }
+
+/*******************************
+NAVIGATION
+*******************************/
+
+nav {
+	float: right;
+	margin-top: 10px;
+}
+nav a {
+	font-family: 'Belleza', sans-serif;
+	margin-right: 13px;
+	text-transform: uppercase;
+	-moz-transition: all 200ms ease;
+	-webkit-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease; 
+}
+.nav a {
+	opacity: .5;
+}
+.nav a:hover,
+.nav a:focus {
+	opacity: 1;
+	-moz-transition: all 200ms ease;
+	-webkit-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease; 
 }
