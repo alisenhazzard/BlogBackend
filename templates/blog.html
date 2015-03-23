@@ -12,198 +12,37 @@
 		
 		<div class="clearfix"></div>
 
-		<div class="post">
-			<a href="blogposts/portfolio-website-design-process.html"><h3>Portfolio Website Design Process</h3></a>
-			<h5>March 11, 2015</h5>
-			<p class="post-content">Tags: <a href="#">Web Design</a>, <a href="#">Wireframes</a></p>
-			<p class="post-content">
-				Before I started this portfolio and blog project, I used <a href="https://balsamiq.com/" target="blank" rel="nofollow">Balsamiq</a> to create a wireframe. I hadn't used this software before, but I found it highly beneficial to my outlining process, and I ended up really liking the program and the tools it offers.
-			</p>
-			<a href="blogposts/portfolio-website-design-process.html" class="keep-reading">Keep reading</a>
-		</div>
 
-		<div class="post">
-			<a href="blogposts/installing-mamp-and-wordpress-locally.html"><h3>Installing MAMP and WordPress Locally</h3></a>
-			<h5>January 14, 2015</h5>
-			<p class="post-content">Tags: <a href="#">WordPress</a>
-			<p class="post-content">
-				Installing and working on WordPress locally is a good way to build a theme or customize an existing one before hosting it on a server. If you’ve designed a website with static HTML and CSS, you can transfer your code into PHP within the downloaded WordPress files, experiment with plugins, and perfect the design of a site before needing to worry about FTP files, purchasing a domain name, and launching the site. Here is a step-by-step installation process for downloading MAMP and WordPress to start working locally.
-			</p>
-			<a href="blogposts/installing-mamp-and-wordpress-locally.html" class="keep-reading">Keep reading</a>
-		</div>
 
-		<div class="post">
-			<a href="blogposts/creating-effects-with-photoshop-blending-modes.html"><h3>Creating Effects with Photoshop Blending Modes</h3></a>
-			<h5>December 2, 2014</h5>
-			<p class="post-content">Tags: <a href="#">Photoshop</a>
-			<p class="post-content">
-				A great, simple way to adjust photos is with Photoshop layer blending modes. You can dramatically change the look of a photo in four steps.
-			</p>
-			<a href="blogposts/creating-effects-with-photoshop-blending-modes.html" class="keep-reading">Keep reading</a>
-		</div>
 
-		<div class="post">
-			<a href="blogposts/notes-from-the-great-swampy-middle.html"><h3>Notes from the Great Swampy Middle</h3></a>
-			<h5>November 20, 2014</h5>
-			<p class="post-content">Tags: <a href="#">Writing</a>
-			<p class="post-content">
-				This is my third year writing a novel for National Novel Writing Month (NaNoWriMo), but my first year doing any sort of planning ahead of time.
-			</p>
-			<p class="post-content">
-				Recently I was introduced to some Jim Butcher articles on the craft of writing a novel, and – wouldn’t you know it! – it does help to pre-write and plan where you want you book to take you. It’s like walking my dog: I can let her lead, and go wherever she wants, but it’s easier to end up in the right place if I am the one making the decisions..
-			</p>
-			<a href="blogposts/notes-from-the-great-swampy-middle.html" class="keep-reading">Keep reading</a>
-		</div>
+        {{ for(postIndex in posts){ }}
+            {{// Possible fields: }}
+            {{// title, slug, created, description, category, tags, timeToRead, content }}
 
-		<div class="post">
-			<a href="blogposts/nanowrimo-2014.html"><h3>National Novel Writing Month, 2014</h3></a>
-			<h5>October 7, 2014</h5>
-			<p class="post-content">Tags: <a href="#">Writing</a>
-			<p class="post-content">
-				<a href='http://nanowrimo.org' target='blank'>National Novel Writing Month (NaNoWriMo)</a> is an annual, self-motivated challenge to write 50 thousand words between November 1st and 30th. It’s organized by an awesome <a href='http://nanowrimo.org/about' target='blank'>non-profit group</a> that promotes writing in K-12 classrooms, provides materials for libraries, and hosts tons of write-a-thons and events for the community behind NaNoWriMo.
-			</p>
-			<a href="blogposts/nanowrimo-2014.html" class="keep-reading">Keep reading</a>
-		</div>
+            {{ post = posts[postIndex] }}
 
-		<div class="post">
-			<a href="blogposts/first-steps-to-developing-a-wordpress-theme.html"><h3>First Steps for Developing a WordPress Theme</h3></a>
-			<h5>September 20, 2014</h5>
-			<p class="post-content">Tags: <a href="#">Web Design</a>, <a href="#">WordPress</a></p>
-			<p class="post-content">
-				If you can build a static website with HTML, CSS, and Javascript, it’s a short road to cross to building a WordPress theme. Other skills are involved, including some understanding of PHP (which WordPress is built on) and familiarity with the WordPress admin interface. These will certainly expedite the process of developing a theme.
-			</p>
-			<a href="blogposts/first-steps-to-developing-a-wordpress-theme.html" class="keep-reading">Keep reading</a>
-		</div>
-
-		<div class="post">
-			<a href="blogposts/using-git-and-github.html"><h3>Using Git and Github as an Independent Web Developer</h3></a>
-			<h5>September 4, 2014</h5>
-			<p class="post-content">Tags: <a href="#">Github</a>, <a href="#">Web Development</a></p>
-			<p class="post-content">
-				As I learn (constantly) how to be a better web designer and developer, I find that my latest project iterations aren’t always the ones I end up using. For me, there’s substantial trial and error over layouts, formatting, fonts and design, and it’s helpful to have access to each version as I make changes. I could just save multiple versions of a project as I go, but I find it quickly gets messy with different stages of a website in folders, even if they have names detailed enough to know what changes they contain, which for me is never the case.
-			</p>
-			<a href="blogposts/using-git-and-github.html" class="keep-reading">Keep reading</a>
-		</div>
-
-		<div class="post">
-			<a href="blogposts/javascript-madlibs-generator.html"><h3>JavaScript MadLibs Generator</h3></a>
-			<h5>August 22, 2014</h5>
-			<p class="post-content">Tags: <a href="#">JavaScript</a>
-			<p class="post-content">
-				One of my new favorite ways to use Illustrator is as a tracing tool. As a kid, I would trace coloring book pages for my friends so we could all color the same pictures together (<a href="https://www.google.com/search?q=lisa+frank&es_sm=91&source=lnms&tbm=isch&sa=X&ei=zCqbU9zGCZKqyATJ6YKoDg&ved=0CAgQ_AUoAQ&biw=1350&bih=713#q=lisa+frank+coloring+pages&tbm=isch&imgdii=_" target="blank">Lisa Frank</a>, anyone?).
-			</p>
-			<a href="blogposts/javascript-madlibs-generator.html" class="keep-reading">Keep reading</a>
-		</div>
-
-		<div class="post">
-			<a href="blogposts/creating-a-photoshop-layer-mask.html"><h3>Creating a Photoshop Layer Mask</h3></a>
-			<h5>August 13, 2014</h5>
-			<p class="post-content">Tags: <a href="#">Photoshop</a></p>
-			<p class="post-content">
-				There are so many different applications for Photoshop masks. Masks are a simple, non-destructive way to change the transparency of part of an image, allowing you to combine different photos into a collage or change the background without losing the data of the original image. You can easily change the settings for only the masked layer instead of adjusting the settings for the entire image. With Layer Masks, you use selection tools and brushes to achieve natural looking edges, as opposed to Vector Masks, which use the pen or shape tool for more defined edges.
-			</p>
-			<a href="creating-a-photoshop-layer-mask.html" class="keep-reading">Keep reading</a>
-		</div>
-
-		<div class="post">
-			<a href="blogposts/simple-flexbox-layout.html"><h3>Simple Flexbox Website Layout</h3></a>
-			<h5>August 8, 2014</h5>
-			<p class="post-content">Tags: <a href="#">Web Design</a>, <a href="#">Flexbox</a>, <a href="#">CSS</a>, <a href="#">HTML</a></p>
-			<p class="post-content">
-				Using Flexbox to structure the layout of a website includes two parts: a parent element that acts as a flex container, and one or more child elements which receive the flex properties of the parent. First, the parent element receives the flex property <strong>display: flex</strong>, and then it’s fast and easy to style the child elements.
-			</p>
-			<a href="blogposts/simple-flexbox-layout.html" class="keep-reading">Keep reading</a>
-		</div>
-
-		<div class="post">
-			<a href="blogposts/tips-on-usability-dont-make-me-think.html"><h3>Tips on Usability from 'Don't Make Me Think' by Steve Krug</h3></a>
-			<h5>July 30, 2014</h5>
-			<p class="post-content">Tags: <a href="#">Usability</a>, <a href="#">Web Design</a></p>
-			<p class="post-content">
-				According to Steve Krug, the author of <em>Don’t Make Me Think: A Common Sense Approach to Web Usability</em>, <strong>the No. 1 rule of web design is to make the user think as little as possible</strong>. Not because the user will leave the site or think it’s poorly designed, but because the user will think it’s their fault if they don’t understand what to do on a website. I think it’s fair to say this is not how we’d like our users to feel upon visiting (or leaving) our sites.
-			</p>
-			<a href="blogposts/tips-on-usability-dont-make-me-think.html" class="keep-reading">Keep reading</a>
-		</div>
-
-		<div class="post">
-			<a href="blogposts/getting-started-with-seo.html"><h3>Getting Started with Search Engine Optimization (SEO)</h3></a>
-			<h5>July 22, 2014</h5>
-			<p class="post-content">Tags: <a href="#">Web Design</a>, <a href="#">SEO</a></p>
-			<p class="post-content">
-				Once you have a website up and ready-to-go, the next step is getting it noticed by search engines and the people using them. <strong>Search Engine Optimization (SEO)</strong> may seem like a daunting thing to undertake on your own, but there are some simple ways you can start increasing your visibility through your content and code. This is a large area of discussion with many different opinions, especially since the algorithm search engines use isn’t constant or publicly available, but based on current understanding of the algorithm, here is a basic guide to increasing the chances of your website appearing higher in result pages.
-			</p>
-			<a href="blogposts/getting-started-with-seo.html" class="keep-reading">Keep reading</a>
-		</div>
-
-		<div class="post">
-			<a href="blogposts/easy-css-two-column-photo-alumb.html"><h3>Easy CSS Layout - Two Column Photo Album</h3></a>
-			<h5>July 15, 2014</h5>
-			<p class="post-content">Tags: <a href="#">Web Design</a>, <a href="#">CSS</a></p>
-			<p class="post-content">
-				There are many effective ways to style photos on a website using responsive design. I have experimented with <a href="http://masonry.desandro.com/" target="blank" alt="Masonry">Masonry</a> (a JavaScript grid layout), <a href="http://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="blank">Flexbox</a>, and other grid-based layouts for the structure of my photo albums, but these techniques don't work for some sites. Here is a floating two column structure. The limited amount of code needed is also a plus.
-			</p>
-			<a href="blogposts/easy-css-two-column-photo-alumb.html" class="keep-reading">Keep reading</a>
-		</div>
-
-		<div class="post">
-			<a href="blogposts/google-web-fonts.html"><h3>Google Web Fonts</h3></a>
-			<h5>July 9, 2014</h5>
-			<p class="post-content">Tags: <a href="#">Typography</a>
-			<p class="post-content">
-				I just love using <a href='http://www.google.com/fonts' target='blank'>Google Fonts</a> to change the type when I'm designing a website.. Usually, I try to leave this until later in the process, because I get obsessed with switching between fonts, or I pick a font too early and it doesn’t represent the finished site and then have to go back and find a new one (sigh...)
-			</p>
-			<a href="blogposts/google-web-fonts.html" class="keep-reading">Keep reading</a>
-		</div>
-
-		<div class="post">
-			<a href="blogposts/three-cheers-for-treehouse.html"><h3>Three Cheers for Treehouse</h3></a>
-			<h5>July 2, 2014</h5>
-			<p class="post-content">Tags: <a href="#">Web Design</a>
-			<p class="post-content">
-				I’ve been following the Web Design Track at <a href="http://teamtreehouse.com" target="blank">Treehouse</a>, which incorporates the fundamentals of CSS and HTML, and also introduces web design foundations, an intro to Photoshop and Illustrator, and SEO and Sass basics. The track is thorough, walking you through the process of designing a website from start to finish, including purchasing a domain name and hosting your website on a server.
-			</p>
-			<a href="blogposts/three-cheers-for-treehouse.html" class="keep-reading">Keep reading</a>
-		</div>
-
-		<div class="post">
-			<a href="blogposts/skillcrush-webinar.html"><h3>Skillcrush Webinar with Ada Birnir, CEO</h3></a>
-			<h5>June 27, 2014</h5>
-			<p class="post-content">Tags: <a href="#">Web Design</a>
-			<p class="post-content">
-				My mornings usually start with a cup of coffee and <a href="https://news.layervault.com/">Designer News</a> (or Reddit, depending on how alert my brain is), and I love reading morning emails from the team at <a href="http://skillcrush.com">Skillcrush</a>. Skillcrush is a community for learning online, specifically in the technical field, and they send great emails like “Joining the Git Community” and “Tech Terms” of the day. Their <a href="http://skillcrush.com/blog/">blog</a> is filled with fun articles and helpful posts for ladies in tech.
-			</p>
-			<a href="blogposts/skillcrush-webinar.html" class="keep-reading">Keep reading</a>
-		</div>
-
-		<div class="post">
-			<a href="blogposts/pixelated-image-in-photoshop.html"><h3>Pixelated Image in Photoshop</h3></a>
-			<h5>June 17, 2014</h5>
-			<p class="post-content">Tags: <a href="#">Photoshop</a>
-			<p class="post-content">
-				Here's a fun and quick effect in Photoshop - it uses only three layers and takes no time at all. I like it because you can adjust the size of the pixels and get different results, depending on how much of the original image you want to remain when you're done.
-			</p>
-			<a href="blogposts/pixelated-image-in-photoshop.html" class="keep-reading">Keep reading</a>
-		</div>
-
-		<div class="post">
-			<a href="blogposts/illustrator-templates-for-tracing.html"><h3>Illustrator Templates for Tracing</h3></a>
-			<h5>June 12, 2014</h5>
-			<p class="post-content">Tags: <a href="#">Illustrator</a>
-			<p class="post-content">
-				One of my new favorite ways to use Illustrator is as a tracing tool. As a kid, I would trace coloring book pages for my friends so we could all color the same pictures together (<a href="https://www.google.com/search?q=lisa+frank&es_sm=91&source=lnms&tbm=isch&sa=X&ei=zCqbU9zGCZKqyATJ6YKoDg&ved=0CAgQ_AUoAQ&biw=1350&bih=713#q=lisa+frank+coloring+pages&tbm=isch&imgdii=_" target="blank">Lisa Frank</a>, anyone?).
-			</p>
-			<a href="blogposts/illustrator-foundations.html" class="keep-reading">Keep reading</a>
-		</div>
-
-		<div class="post">
-			<a href="blogposts/illustrator-foundations.html"><h3>Illustrator Foundations</h3></a>
-			<h5>June 10, 2014</h5>
-			<p class="post-content">Tags: <a href="#">Illustrator</a></p>
-			<p class="post-content">
-				I've been doing some research into the Adobe programs - <a href="http://teamtreehouse.com" target="blank">Treehouse</a> has a wonderful collection of videos for learning the foundations of Illustrator and Photoshop from the  bottom-up. Mat Helme, who teaches Illustrator Foundations, does a thorough job of explaining every one of the tools available and how to use them. As a total newbie, this was exactly what I needed.
-			</p>
-			<a href="blogposts/illustrator-foundations.html" class="keep-reading">Keep reading</a>
-		</div>
+            <div class="post">
+                <a href="/blog/{{- post.slug }}" title="{{- post.title }}">
+                    <h3>{{- post.title }}</h3>
+                </a>
+                <h5>
+                    {{- moment(post.created).format('MMMM Do, YYYY') }}
+                </h5>
+                <p class="post-content">Tags: 
+                    {{ for(tagIndex in post.tags){ }}
+                        <a href="/blog/tag/{{- post.tagsLower[tagIndex] }}" title="{{- post.tags[tagIndex] }}">
+                            {{- post.tags[tagIndex] }}{{ if(tagIndex < post.tags.length-1){ }}, {{ } }}
+                        </a>
+                    {{ } }}
+                </p>
+                <p class="post-content">
+                    {{- post.description }}
+                </p>
+                <a href="/blog/{{- post.slug }}" title="{{- post.title }}" class="keep-reading">
+                    Keep reading
+                </a>
+            </div>
+        {{ } }}
 
 		<p class="copyright small-text">
 			Copyright &copy; 2015 Alisen Hazzard
@@ -250,32 +89,5 @@
 		</div>
 		-->
 	</div>
-
-{{ for(postIndex in posts){ }}
-    {{// Possible fields: }}
-    {{// title, slug, created, description, category, tags, timeToRead, content }}
-
-    <div>
-        {{ post = posts[postIndex] }}
-
-        <a href='/blog/{{- post.slug }}'>
-            {{- post.title }} 
-        </a> in 
-        <a href='/blog/category/{{- post.categoryLower }}'>
-            {{- post.category }} 
-        </a>
-        on {{- moment(post.created).format('MMMM Do, YYYY') }}
-
-        <div>
-            Tags: 
-            {{ for(tagIndex in post.tags){ }}
-
-                <a href='/blog/tag/{{- post.tagsLower[tagIndex] }}'>
-                    {{- post.tags[tagIndex] }}
-                </a>
-            {{ } }}
-        </div>
-    </div>
-{{ } }}
 
 {{ include _bottom.html }}
