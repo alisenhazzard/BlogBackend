@@ -1,0 +1,41 @@
+{{ include _top.html }}
+
+
+<h1>{{- post.title }} (on {{- post.created }})</h1>
+
+<div>
+    Time to read: {{- post.timeToRead }} minutes
+</div>
+
+<div>
+    {{- post.description }} 
+</div>
+
+<div>
+    {{ for(tagIndex in post.tags){ }}
+        {{- post.tags[tagIndex] }}
+    {{ } }} 
+</div>
+
+<div>
+    {{- post.category }}
+</div>
+
+<div>
+    {{- post.content }} 
+</div>
+
+
+<div>
+    {{- post.slug }} 
+</div>
+
+
+
+<pre><code class="css">#example {
+    code: "Goes here";
+}
+<code></pre>
+
+
+{{ include _bottom.html }}

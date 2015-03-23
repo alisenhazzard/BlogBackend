@@ -1,0 +1,33 @@
+{{ include _top.html }}
+
+Posts by Tag
+<h1>{{- tag }}</h1>
+
+{{ for(postIndex in posts){ }}
+    {{// Possible fields: }}
+    {{// title, slug, created, description, category, tags, timeToRead, content }}
+
+    <div>
+        {{ post = posts[postIndex] }}
+
+        <a href='/blog/{{- post.slug }}'>
+            {{- post.title }} 
+        </a> in 
+        <a href='/blog/category/{{- post.categoryLower }}'>
+            {{- post.category }} 
+        </a>
+        on {{- moment(post.created).format('MMMM Do, YYYY') }}
+
+        <div>
+            Tags: 
+            {{ for(tagIndex in post.tags){ }}
+
+                <a href='/blog/tag/{{- post.tagsLower[tagIndex] }}'>
+                    {{- post.tags[tagIndex] }}
+                </a>
+            {{ } }}
+        </div>
+    </div>
+{{ } }}
+
+{{ include _bottom.html }}

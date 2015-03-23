@@ -5,7 +5,7 @@
         "apiUrl": "localhost"
     },
     "database": {
-        "db": "mongodb://localhost/postbackend"
+        "db": "mongodb://localhost/sitebackend"
     },
     "s3": {
         "key": "",
