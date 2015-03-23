@@ -52,6 +52,10 @@ function loadData(){
         async.each(
             files,
             function processFile( file, callback ){
+                if(file.indexOf('.html') === -1){
+                    logger.log('load-blog-posts:skipFile', 'skipping file: ' + file);
+                    return callback();
+                }
                 // read data
                 fs.readFile(postDirectory + file, 'utf8', function(err, data){
                     logger.log('load-blog-posts:readFile',
