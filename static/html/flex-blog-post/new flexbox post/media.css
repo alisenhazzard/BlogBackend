@@ -1,0 +1,35 @@
+/***********************
+	Media Queries
+************************/
+
+@media screen and (min-width: 768px) {
+	/* NAVIGATION */
+	nav {
+		flex-direction: row;
+	}
+	nav li {
+		flex-grow: 1;
+		width: auto;
+	}
+	nav li:first-child {
+		flex-grow: 3;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	/* CONTENT */
+	.column {
+		align-self: flex-start;
+		margin: 0 10px;
+	}
+	.content-wrapper {
+		flex-direction: row;
+	}
+	.primary {
+		flex-grow: 2;
+		order: 0;
+	}
+	.secondary {
+		flex-grow: 1;
+	}
+}

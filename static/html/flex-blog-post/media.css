@@ -1,0 +1,39 @@
+
+/***********************
+	Media Queries
+************************/
+@media screen and (max-width: 768px) {
+	/* NAVIGATION */
+	.flex-nav {
+		flex-direction: column;
+	}
+	.flex-nav li {
+		margin: 1px 0;
+		width: 100%;
+	}
+	.flex-nav li:first-child {
+		margin: 0;
+	}
+}
+@media screen and (max-width: 900px) {
+
+	/* CONTENT */
+	.content-wrapper {
+		flex-direction: column;
+	}
+	.column {
+		padding: 0;
+	}
+	.col-image {
+		display: none;
+	}
+	.first {
+		order: 0;
+	}
+	.second {
+		order: 1;
+	}
+	.third {
+		order: 2;
+	}
+}
