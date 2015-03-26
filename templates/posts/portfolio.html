@@ -1,0 +1,99 @@
+---
+{
+    title: "Portfolio Website Design Process",
+    description: 'Before I started this portfolio and blog project, I used <a href="https://balsamiq.com/" target="blank" rel="nofollow">Balsamiq</a> to create a wireframe. I hadn\'t used this software before, but I found it highly beneficial to my outlining process, and I ended up really liking the program and the tools it offers.',
+    slug: "portfolio-website-design-process",
+    tags: ["Web Design", "Wireframes"],
+    created: "2015-03-22"
+}
+---
+<h3>The Benefits of Wireframing</h3>
+
+<p class="post-content">
+	Before I started this portfolio and blog project, I used <a href="https://balsamiq.com/" target="blank" rel="nofollow">Balsamiq</a> to create a wireframe. I hadn't used this software before, but I found it highly beneficial to my outlining process, and I ended up really liking the program and the tools it offers.
+</p> 
+<p class="post-content">
+	The Balsamiq interface is relatively straight-forward. Elements are sorted by function and have convenient graphics to tell you what they do. It has built-in grids for positioning elements, which is great for laying out images and text to get an accurate view of what they will look like once you implement them in your code. I only made a mockup for the desktop layout of my portfolio, but it also has tools for designing wireframes specifically for mobile.
+</p>
+<p class="post-content">
+	I stuck pretty close to this layout when I wrote the code. Here’s the mockup that I made:
+</p>
+
+<a href="/static/build/img/blogimages/basalmiq-mockup.jpg">
+	<img src="/static/build/img/blogimages/basalmiq-mockup.jpg">
+</a>
+
+<p class="post-content">
+	I've done some wireframing on previous projects, but on smaller-scale websites I tend to just go for it, writing the HTML and CSS as I go and rearranging as needed once the layout takes shape. I thought this was a perfectly acceptable way to code (and it might be for some), but with a wireframe, this project took considerably less time than it would have without one.
+</p>
+<p class="post-content">
+	The most helpful part of wireframing for me is using a content-first approach. I knew where I wanted to include the text and images before arranged the other elements. With wireframes, you can see right away how the site will work. If you need more whitespace to break up an area, or if you find multiple text-heavy sections next to each other, you can quickly remedy any pressure points. For me, it was a beneficial time-saver to correct these issues early in the process.
+</p>
+
+<h3>Fixed Background Attachments</h3>
+
+<p class="post-content">
+	I know it’s <a href="http://line25.com/articles/web-design-trend-showcase-super-gradients" target="blank">trendy to use gradients</a> but I really do like the Instagram-filter-hipster look for this project. Here’s my (very simple) code for the header image:
+</p>
+
+<!-- CSS -->
+
+<pre><code class="css">.main-header {
+    height: 750px;
+    background: linear-gradient(#C84309, transparent 90%),
+    			linear-gradient(0deg, #000117, transparent),
+    			#C84309 url('../assets/beach.JPG') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+<code></pre>
+
+<p class="post-content">
+	Using a fixed background-attachment property keeps the image and the overlaying gradient from scrolling with the rest of the page. I used this technique in a few spots on the site. I especially like the middle image, which has a smaller height then the header and footer images, so you only get a small area of the image at a time.
+</p>
+
+<h3>Highlighting Web Design</h3>
+
+<p class="post-content">
+	This website focuses mostly on my web design projects. To put emphasis on them, they are the first elements that display as you scroll, and each one has containing whitespace so they display one-by-one across the entire screen. Instead of using a color-scheme for my site and incorporating those colors into the portfolio, I pull colors from the individual site designs to use on the calls-to-action.
+</p>
+<p class="post-content">
+	I kept it a simple, single-page layout website. I send the user straight to my portfolio projects instead to another landing page for each website.
+</p>
+<p class="post-content">
+	To me, there is only so much you can say about a project (the specific work you did for it, the purpose of the site, interesting elements you included) before the user just needs to look at the site. From a UX standpoint, I think it’s better for the user if they are launched straight to the project from the portfolio, so that’s the structure of my site.
+</p>
+<p class="post-content">
+	I’ve also paired-down the number of projects I’m featuring. It’s gotten to the point where my latest projects are significantly better and cleaner than past ones (in appearance as well as code), so this portfolio focuses on fewer projects.
+</p>
+
+<h3>Including a Blog</h3>
+
+<p class="post-content">
+	Additionally, I made the blog section of the site a secondary component. My last site was WordPress-based, and I liked having my latest and featured posts displaying on the home page, but that made it more of a blog/portfolio than a portfolio/blog.
+</p>
+<p class="post-content">
+	I used some layout components of <a href="https://medium.com/" target="blank" rel="nofollow">Medium</a> when structuring my blog section, because I like the simple structure.
+</p>
+<p class="post-content">
+	Here’s my inspiration for the post structure and sidebar components from Medium:
+</p>
+
+<a href="/static/build/img/blogimages/medium.jpg">
+	<img src="/static/build/img/blogimages/medium.jpg">
+</a>
+
+<p class="post-content">
+	It’s helpful to find inspiration in sites that are easy to use. This seems intuitive, but I think it’s a better approach than basing important elements on a site that is unusual or unique - sometimes these are the sites that make you go “Huh…” and then you have to think about where the navigation is or how to browse new posts. From a design standpoint, I love sites that are unusual. But from a user standpoint, I just want to automatically know what’s going on in the website.
+</p>
+
+<h3>Other Portfolios for Inspiration</h3>
+
+<p class="post-content">
+	I’m glad to have a shiny, brand-new site to feature my work! Here are some other portfolios that I like for further inspiration:
+</p>
+<ol class="post-content">
+	<li>1. <a href="http://joelcalifa.com/" target="blank">Joel Califa is Sad</a> - Resume structure, great colors, simple text with good hierarchy</li>
+	<li>2. <a href="http://johnie.se/" target="blank">Johnie Hjelm</a> - One page layout, clean and readable text</li>
+	<li>3. <a href="http://www.florianwacker.de/en/" target="blank">Florian Wacker</a> - Short, simple animation in the header, elegant transitions</li>
+</ol>

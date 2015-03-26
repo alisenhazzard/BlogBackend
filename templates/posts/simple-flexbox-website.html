@@ -1,0 +1,182 @@
+---
+{
+    title: "Simple Flexbox Website",
+    description: 'Using Flexbox to structure the layout of a website includes two parts: a parent element that acts as a flex container, and one or more child elements which receive the flex properties of the parent. First, the parent element receives the flex property <strong>display: flex</strong>, and then it’s fast and easy to style the child elements. With a few quick media queries to adjust for different screen sizes, your layout is ready to go!',
+    slug: "simple-flexbox-website",
+    tags: ["Web Design", "Flexbox", "CSS", "HTML"],
+    created: "2014-08-08"
+}
+---
+<p class="post-content">
+	<a href="#" target="blank" alt="View Flexbox Demo Page">View Flexbox Demo Page</a>
+</p>
+<p class="post-content">
+	Using Flexbox to structure the layout of a website includes two parts: a parent element that acts as a flex container, and one or more child elements which receive the flex properties of the parent. First, the parent element receives the flex property <strong>display: flex</strong>, and then it’s fast and easy to style the child elements. With a few quick media queries to adjust for different screen sizes, your layout is ready to go!
+</p>
+<p class="post-content">
+	As a quick note, Flexbox does require vendor prefixes for most browsers where it is supported. Be sure to check <a href="http://caniuse.com/#search=flexbox" target="blank" alt="Can I Use">Can I Use</a> for browser support, known issues, and other resources.
+</p>
+<p class="post-content">
+	Here is a quick webpage I made using Flexbox on the navigation, content, and footer, with a non-flex Primary Column. It’s quick to implement, and each part uses the same flex properties to dynamically position elements without needing a grid layout or specified widths.
+</p>
+<a href="#" target="blank">
+	<img src="/static/build/img/blogimages/flex-box-images/flex-site.jpg" class="blog-image" alt="Felxbox Demo Website" />
+</a>
+<p class="post-content">
+	<a href="#" target="blank">View Flexbox Demo Page</a>
+</p>
+
+<h3>Navigation</h3>
+
+<p class="post-content">
+	It worked well for me to use a list structure for my flex navigation, making the containing &lt;ul&gt; element the flex parent. By default, the flex container element has <strong>flex-direction: row</strong>, which is perfect for navigation at larger screen sizes. This is the only necessary property to give the parent &lt;ul&gt; element, so now the &lt;li&gt; items are all flex items!
+</p>
+<img src="/static/build/img/blogimages/flex-box-images/navigation.jpg" class="blog-image" alt="Felxbox Demo Website Navigation" />
+<p class="post-content">
+	To make the link styles more attractive, I gave them a few flex properties. First, <strong>align-self: center</strong>. This property aligns the elements to the center of the containing element. (Other values for align-self include flex-start and flex-end, baseline, stretch, and auto.)
+</p>
+<p class="post-content">
+	Next was a property for the size of each list item: <strong>flex-grow: 1</strong>. This will allow all of the &lt;li&gt; elements to take up the same amount of space to fill the containing element. The first link, an &lt;h1&gt; with the name of the website, will take up more space due to the font size. To have an element take up twice as much space, give it a <strong>flex-grow: 2</strong>, and increment up depending on how large you want it to be. Here's the complete code for styling the navigation.
+</p>
+<p class="post-content">
+
+<pre><code class="css">.flex-nav {
+    display: flex;
+}
+.flex-nav li {
+	align-self: center;
+	background: #AAAAAA;
+	color: #FFFFFF;
+	flex-grow: 1;
+	font-size: 1.2em;
+	letter-spacing: 1px;
+	margin-right: 10px;
+	padding: 8px;
+	text-align: center;
+}
+.flex-nav li:first-child {
+	background: #000000;
+	margin-right: 100px;
+}
+<code></pre>
+
+<h3>Column Layout</h3>
+
+<p class="post-content">
+	Like the navigation, all you need to do is wrap your content in a containing element and give it <strong>display: flex</strong>. If each element contains the same amount of content, the columns will take up equal space. For example, here are the columns with roughly the same amount of text and image content.
+</p>
+<pre><code class="css">.content-wrapper {
+    display: flex;
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+.column {
+	padding: 0 25px;
+}
+.col-image {
+	width: 100%;
+}
+.primary {
+	margin: 50px auto;
+	max-width: 800px;
+	padding: 0 20px;
+}
+.site-wrapper {
+	min-height: 100%;
+}
+<code></pre>
+<img src="/static/build/img/blogimages/flex-box-images/columns-1.jpg" class="blog-image" alt="Felxbox Demo Website" />
+<p class="post-content">
+	However, if one column contains less, it will automatically scale down to take up space proportional to its content. Here are the columns with the Third Column containing less content than the other two columns. The code stays the same, but flex allows the columns to adjust proportionally to their content.
+</p>
+<img src="/static/build/img/blogimages/flex-box-images/columns-2.jpg" class="blog-image" alt="Felxbox Demo Website" />
+<p class="post-content">
+	Images that are child elements of a flex parent will also inherit the flex properties. To give my images some breathing room, I gave them 90% width, but you can also adjust this when you set your margin and padding for the columns.
+</p>
+<p class="post-content"> 
+	(I used <a href="http://lorempixel.com/" target="blank">LoremPixel</a> for the images, which gives you filler images similar to Lorem Ipsum for text.)  
+</p>
+
+<h3>Ordering Elements</h3>
+
+<p class="post-content">
+	You can change the order of elements in a flex container without adjusting them in your HTML, starting with at the left side of the screen at <strong>order: 0</strong>. Here I gave First Column <strong>order: 1</strong>, Second Column <strong>order: 0</strong>, and Third Column <strong>order: 2</strong>. This is great if you want to rearrange content for larger screen sizes. 
+</p>
+<img src="/static/build/img/blogimages/flex-box-images/columns-3.jpg" class="blog-image" alt="Felxbox Demo Website" />
+
+<h3>Flex Footer</h3>
+
+<p class="post-content">
+	Like the navigation, this footer also uses a list structure. In addition to making the parent element the flex container, I also gave it the  flex property <strong>justify-content: center</strong>, as well as <strong>max-width: 700px</strong>, and <strong>margin: 0 auto</strong>. This brought the elements to the center of the footer with equal margins on either side.
+</p>
+<p class="post-content"> 
+	Also like the navigation, these &lt;li&gt; elements have the flex property <strong>align-self: center</strong> and <strong>flex-grow: 1</strong>. 
+</p>
+
+<pre><code class="css">footer {
+    background: #AAAAAA;
+    bottom: 0;
+}
+.flex-footer {
+	display: flex;
+	justify-content: center;
+	max-width: 700px;
+	margin: 0 auto;
+}
+.flex-footer li {
+	align-self: center;
+	flex-grow: 1;
+	padding: 5px;
+}
+<code></pre>
+
+<h3>Media Queries</h3>
+
+<p class="post-content"> 
+	For smaller screen sizes, give the parent container of the navigation and content <strong>flex-direction: column</strong>. This will make the containers and all the inner elements aligned as columns instead of rows. For the navigation, you can also adjust the margins of the list elements to suit the website.
+</p>
+<p class="post-content"> 
+	It can be nice to have the columns in a different order for mobile sizes, which is easy to do in a media query with the order property. With smaller screen sizes, I also set the images to <strong>display: none</strong> so they don’t take up valuable screen real-estate at smaller resolutions.
+</p>
+<p class="post-content"> 
+	There’s nothing you need to change to style the footer for mobile (yay!). You could easily structure it like the main navigation, add social media icons, website information, and other elements, which could appear only on larger screen sizes (like the image elements).
+</p>
+<p class="post-content">
+	Here is the complete code for adjusting the webpage to smaller screen resolutions.
+</p>
+
+<pre><code class="css">@media screen and (max-width: 767px) {
+	.flex-nav { 
+	    flex-direction: column;
+	}
+	.flex-nav li {
+		margin: 1px 0;
+		width: 10%;
+	}
+	.flex-nav li:first-child {
+		margin: 0;
+	}
+	.content-wrapper {
+		flex-direction: column;
+	}
+	.column {
+		padding: 0;
+	}
+	.col-image {
+		display: none;
+	}
+	.first {
+		order: 0;
+	}
+	.second {
+		order: 1;
+	}
+	.third {
+		order: 2;
+	}
+}
+<code></pre>
+
+<p class="post-content">
+	What have you made with Flexbox, and how do you handle the browser support? 
+</p>

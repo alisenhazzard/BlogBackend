@@ -3,10 +3,10 @@
 // Blog 
 //
 // ======================================
-.page-blog {
-	* {
-		color: #333;
-	}
+.page-blog,
+.page-post {
+	color: #333;
+	
 	.blog-header {
 		float: left;
 		margin-top: 30px;
@@ -17,6 +17,9 @@
 	}
 	.script {
 		font-family: 'Kaushan Script', cursive;
+	}
+	.read-time {
+		text-align: center;
 	}
 
 	/*****************************
@@ -122,11 +125,14 @@
 		transition: all 350ms ease;
 	}
 	.post-wrapper {
+		border-bottom: 1px solid #ddd;
 		margin: 4% 3%;
 		max-width: 600px;
+		padding-bottom: 4%;
 	}
-	.post-wrapper h2 {
+	.post-wrapper h1 {
 		border-bottom: 1px solid #ddd;
+		margin-bottom: 20px;
 		padding-bottom: 20px;
 		text-align: center;
 	}
@@ -135,6 +141,9 @@
 	}
 	.post-content {
 		margin: 24px 0;
+	}
+	ul li {
+		list-style-type: circle;
 	}
 	li {
 		margin: 10px 0;
@@ -158,6 +167,11 @@
 	*****************************/
 
 	@media screen and (min-width: 640px) {
+		.header-wrapper {
+			max-width: 1100px;
+			margin: 0 auto;
+			padding: 0 20px;
+		}
 		.blog-header {
 			font-size: 4rem;
 		}
@@ -182,6 +196,7 @@
 			font-size: 6rem;
 			line-height: 5rem;
 		}
+		.post-wrapper h1,
 		h2 {
 			font-size: 3rem;
 			line-height: 4rem;

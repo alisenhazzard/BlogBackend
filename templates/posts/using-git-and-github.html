@@ -1,0 +1,102 @@
+---
+{
+    title: "Using Git and Github as an Independent Web Developer",
+    description: 'As I learn (constantly) how to be a better web designer and developer, I find that my latest project iterations aren’t always the ones I end up using. For me, there’s substantial trial and error over layouts, formatting, fonts and design, and it’s helpful to have access to each version as I make changes. I could just save multiple versions of a project as I go, but I find it quickly gets messy with different stages of a website in folders, even if they have names detailed enough to know what changes they contain, which for me is never the case.',
+    slug: "using-git-and-github",
+    tags: ["Github", "Web Development"],
+    created: "2014-09-04"
+}
+---
+<p class="post-content">
+	As I learn (constantly) how to be a better web designer and developer, I find that my latest project iterations aren’t always the ones I end up using. For me, there’s substantial trial and error over layouts, formatting, fonts and design, and it’s helpful to have access to each version as I make changes. I could just save multiple versions of a project as I go, but I find it quickly gets messy with different stages of a website in folders, even if they have names detailed enough to know what changes they contain, which for me is never the case. 
+</p>
+<p class="post-content">
+	Using a <strong>version control system (VCS)</strong> is a more efficient way to save iterations without needing to duplicate folders or risk losing information you end up needing. A VCS lets you save versions of your work, letting you access old versions and manage changes that are made.
+</p>
+
+<h3>Why is a VCS Important?</h3>
+
+<p class="post-content">
+	If you’re working on a team, the benefits of using a VCS are self-evident: it allows multiple users to make changes to the same project files without needing to manually compare code. Commits can be sorted by when they were made, what changed in each version, who made the commit, and the iterations are saved in case of future need.
+</p>
+<p class="post-content">
+	For an individual developer or web designer, a VCS is a helpful way to keep track of important changes and save as you go without overriding information when you update a file. Even for small changes - like the color scheme of a site - having a past version to easily compare with can save time spent trying to recreate the colors that were in place a week ago. From my experience, it’s also helpful to have records of changes for future projects that might incorporate some of the elements of a web site or design. 
+</p>
+<p class="post-content">
+	There’s also the possibility that you will end up collaborating with others on projects, in which case it is important to know the concepts of a VCS. Without a standard way of updating the same code, it’s less easy to compare changes and iterations.
+</p>
+
+<h3>Distributed Version Control Systems</h3>
+
+<p class="post-content">
+	With a <strong>distributed version control system (DVCS)</strong>, no single copy of a database exists, like in a central repository. Instead, working copies exist in multiple locations, each serving as a remote backup of the history of changes made to the database.
+</p>
+<p class="post-content">
+	There are many benefits to this. Your version could be corrupted, something might happen to your machine, and you could lose your databases. Since DVCS let you make changes to a local repository without a network connection, you can quickly interact with the database.
+</p>
+
+<h3>Working with Git</h3>
+
+<p class="post-content">
+	<a href="http://git-scm.com/" target="blank">Git</a> is a commonly used DVCS. It’s a free, open source distributed version control system that is widely used on projects of all sizes. It was originally created to track changes made the the Linux kernel, so it can handle large-scale projects quickly and efficiently.
+</p>
+<p class="post-content">
+	To use Git, it needs to be locally installed - unless you are working on a Mac, in which case it comes installed. There is an in-browser application available from Github and Code School if you want to learn Git before you download it - <a href="https://try.github.io/levels/1/challenges/1" target="blank">try it out</a>!
+</p>
+
+<h3>The Staging Process:</h3>
+
+<ul class="post-content indent">
+	<li>First, files are modified in the working directory.</li>
+	<li>Next, the files are added to the staging area, and are marked for your next commit snapshot.</li>
+	<li>These files are then committed to your Git repository.</li>
+	<li>It’s possible to either stage some parts of the modified files and then commit these staged files, or to simply add all changed files to the commit.</li>
+</ul>
+<p class="post-content">
+	Git also uses a branching model, which makes it possible to create different branches of a repository. This allows for experimenting with portions of the code which can either be merged with the existing repository or deleted without interfering with the original data. Also, you can control which branches to push to the repository.
+</p>
+<p class="post-content">
+	<a href="http://git-scm.com/" target="blank">Find more detailed info and documentation about Git.</a>
+</p>
+
+<h3>Using Git with Github</h3>
+
+<p class="post-content">
+	<a href="https://github.com/" target="blank">Github</a> is a popular hosting platform for Git, and it provides features that make it easy to collaborate. It also provides the ability to <strong>fork</strong> repositories. When you fork a repository, you make a copy of it where you can make changes and experiment with the code. This is great if you want to use the repository as a starting point for a project, or to suggest bug fixes for the original. <a href="https://github.com/octocat/Spoon-Knife" target="blank">Here is an example for forking a GitHub repository</a>.
+</p>
+
+<h3>Adding a Repository to GitHub</h3>
+
+<ol class="post-content">
+	<li>1. If you don’t have one, create a GitHub account.</li>
+	<li>2. Create a new repository in Gitub:</li>
+		<ol class="indent">
+			<li>i. In the top right, click + and <strong>Create New Repository</strong>.</li>
+			<li>ii. Name the repository, such as "project_name".</li>
+			<li>iii. Leave <strong>Public</strong> checked (unless you have a Micro account that you pay monthly).</li>
+			<li>iv. Leave the two drop downs as <strong>None</strong> and click <strong>Create Repository</strong>.</li>
+		</ol>
+	<li>3. Open Terminal and navigate to the folder containing your project files.</li>
+		<ol class="indent">
+			<li>i. Terminal will open at your root host folder. Use "ls" to list the contents of a folder and "cd" to change directories.</li>
+			<li>ii. For example: You’re in yourname@local-machine, which contains the folder MyProject. In the command line, type "cd MyProject" and hit enter. The new line should read "yourname@local-machine ~/MyProject".</li>
+			<li>iii. Leave terminal open to this folder.</li>
+		</ol>
+	<li>4. Navigate back to your new repository and follow the steps to <strong>Create a New Repository on the Command Line</strong>.</li>
+		<ol class="indent">
+			<li>i. Type "git init" and hit enter. This will create an empty Git repository.</li>
+			<li>ii. Type "git commit -m 'First Commit' ".</li>
+			<li>iii. Type "git remote add origin" followed by the url to your new repository on GitHub. You can find this link at the top of the repository in HTTP form and SSH form. Either will work after the message.</li>
+			<li>iv. Type "git push -u origin master".</li>
+		</ol>
+	<li>5. After your files are pushed, you can view them in your new repository. Now, you can modify the files on your local machine and commit them every time you want to save the progress made to new iterations.</li>
+</ol>
+
+<h3>Know Your Options</h3>
+
+<p class="post-content">
+	There are many other types of version control systems, but it’s important to have some way to keep track of your versions and revisions. I haven’t tried the other platforms, but with the ease of using Git and Github as a hosting platform, and the large community behind them, this seems a good starting point if you have no experience managing your files with a VCS.
+</p>
+<p class="post-content">
+	As a freelance or independent designer/developer, knowing the concepts behind a version control system such as Git will establish good habits that will benefit you both on your own and in potential team situations. Not only will you be keeping copies that contain important changes to your work, but with Git and Github, you will also have a community of repositories to fork and clone.
+</p>

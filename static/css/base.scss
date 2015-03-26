@@ -36,13 +36,17 @@ ul, li {
 }
 p, li {
 	letter-spacing: .16px;
-	line-height: 2rem;
+	line-height: 1.4rem;
 }
 /*******************************
 GLOBAL
 *******************************/
 .clearfix {
 	clear: both;
+}
+.copyright {
+	padding: 20px 0;
+	text-align: center;
 }
 .half-op {
 	opacity: .5;
@@ -171,4 +175,107 @@ nav a {
 	-webkit-transition: all 200ms ease;
 	-o-transition: all 200ms ease;
 	transition: all 200ms ease; 
+}
+
+/***************************************
+Photoshop Blending Modes Post
+***************************************/
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	list-style: none;
+	max-width: 900px;
+	padding: 0;
+}
+.flex-container li {
+	margin: 4px 12px !important;
+}
+.flex-container li img{
+	border: 1px solid #ddd;
+	-webkit-transition: transform .7s;
+	transition: transform .7s;
+	width: 200px;	
+}
+.flex-container li img:hover {
+	-webkit-transform: scale(1.03);
+	-ms-transform: scale(1.03);
+	transform: scale(1.03);
+}
+.blend-mode {
+	display: block;
+	font-size: .9em;
+	margin-top: 10px;
+}
+.dis-tab {
+	display: table;
+	margin: 0 auto;
+}
+.modes {
+	margin-top: 40px;
+}
+.original {
+	display: table;
+	margin: 0 auto 40px;
+	width: 90%;
+}
+
+@media screen and (min-width: 700px){
+	.original {
+		width: 300px;
+	}
+}
+
+/************************************
+	COLUMN PHOTO ALBUM POST
+************************************/
+.col-left,
+.col-right {
+	float: left;
+	width: 50%;
+}
+.col-img {
+	display: table;
+	margin: 20px 10px !important;
+	max-width: 91% !important;
+}
+.col-wrapper {
+	display: table;
+	margin: 20px auto;
+}
+.code {
+	color: #A09844;
+	width: 100%;
+}
+.code p {
+	line-height: inherit;
+}
+.blue {
+	background-color: #23ABB6;
+	color: #fff;
+	letter-spacing: 2px;
+	padding: 10px 0 10px 10px;
+	width: 100%;
+}
+.l-margin-code {
+	margin-left: 70px;
+}
+.lt-gray {
+	background-color: rgb(250, 250, 250);
+	padding: 10px 0 10px 10px;
+	width: 100%;
+}
+
+@media screen and (min-width: 650px) {
+	.col-img {
+		max-width: 330px !important;
+	}
+	.l-margin-code {
+		margin-left: 160px;
+	}
+}
+@media screen and (min-width: 990px) {
+	.col-img {
+		max-width: 330px !important;
+	}
 }

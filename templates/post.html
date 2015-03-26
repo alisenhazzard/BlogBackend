@@ -1,41 +1,25 @@
 {{ include _top.html }}
 
+{{ include blog-header.html }}
 
-<h1>{{- post.title }} (on {{- post.created }})</h1>
+<div class="post-wrapper">
+	<h1>{{- post.title }}</h1>
+ 
+   <!--<div class="read-time small-text">
+	    Time to read: {{- post.timeToRead }} minutes
+	</div>-->
 
-<div>
-    Time to read: {{- post.timeToRead }} minutes
+	 {{- post.content }}
 </div>
 
-<div>
-    {{- post.description }} 
+<div class="tag-wrapper post-wrapper">
+   <p class="post-content">Tagged in:
+        {{ for(tagIndex in post.tags){ }}
+            <a href="/blog/tag/{{- post.tagsLower[tagIndex] }}" title="{{- post.tags[tagIndex] }}">
+                {{- post.tags[tagIndex] }}{{ if(tagIndex < post.tags.length-1){ }}, {{ } }}
+            </a>
+        {{ } }}
+    </p> 
 </div>
-
-<div>
-    {{ for(tagIndex in post.tags){ }}
-        {{- post.tags[tagIndex] }}
-    {{ } }} 
-</div>
-
-<div>
-    {{- post.category }}
-</div>
-
-<div>
-    {{- post.content }} 
-</div>
-
-
-<div>
-    {{- post.slug }} 
-</div>
-
-
-
-<pre><code class="css">#example {
-    code: "Goes here";
-}
-<code></pre>
-
 
 {{ include _bottom.html }}

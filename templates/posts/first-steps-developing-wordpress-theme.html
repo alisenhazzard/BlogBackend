@@ -1,0 +1,115 @@
+---
+{
+    title: "First Steps for Developing a WordPress Theme",
+    description: "If you can build a static website with HTML, CSS, and Javascript, it’s a short road to cross to building a WordPress theme. Other skills are involved, including some understanding of PHP (which WordPress is built on) and familiarity with the WordPress admin interface. These will certainly expedite the process of developing a theme.",
+    slug: "first-steps-developing-wordpress-theme",
+    tags: ["Web Design", "WordPress"],
+    created: "2014-09-20"
+}
+---
+<p class="post-content">
+	If you can build a static website with HTML, CSS, and Javascript, it’s a short road to cross to building a WordPress theme. Other skills are involved, including some understanding of PHP (which WordPress is built on) and familiarity with the WordPress admin interface. These will certainly expedite the process of developing a theme.
+</p> 
+<p class="post-content">
+	If you haven’t used WordPress at all, it’s probably helpful to start by making a website with an existing theme to get used to creating pages and posts, downloading plugins, and just becoming familiar with WordPress.
+</p>
+<p class="post-content">
+	However, with the community already established around WordPress, there are many tutorials and resources. The <a href="http://codex.wordpress.org/" rel="nofollow">WordPress Codex</a> is filled with information to help  everyone from beginners to experts find what they need in the endless options and settings of this platform. (If you are looking for a step-by-step for developing a theme, check out the WordPress Codex page on <a href="http://codex.wordpress.org/Theme_Development" rel="nofollow">Theme Development</a>.)
+</p>
+
+<h3>You Will Need: A website built with HTML and CSS</h3>
+
+<p class="post-content">
+	Before starting a WordPress theme, I’ve found that it’s helpful to make a website with basic code. This will give you the opportunity to find out what works for the site before transferring your template into PHP. It is possible to build a WordPress theme without any pre-constructed code, but to me this feels like designing a website without knowing what you want it to look like at the end. It saves time and energy to know ahead what will work and what won’t in the code.
+</p>
+
+<h3>There’s (Probably) a Plugin for That</h3>
+
+<p class="post-content">
+	Don’t spend tons of time on complicated devices, because chances are there’s an appropriate plugin to substitute. There are plugins for everything: galleries, social media, sharing tools, contact forms, lightboxes, etc. Of course, some plugins are better for your website than others and you might need to weed through to find one that works for you. It’s a trade-off: would you rather spend time making something yourself or finding a plugin that is tried and tested by other WordPress developers?
+</p>
+<p class="post-content">
+	I’ve had experiences on both sides. I built a well-functioning gallery with scrolling thumbnails for a photography site. When I transferred the code to WordPress, I saw so many options for gallery plugins and spent (too much) time trying to find the exact plugin to replicate the code I wrote. In the end, I went with a plugin that wasn’t perfect simply because it would be a better option for my client. But, I doubled the time spent by making a gallery and then weeding through plugins to substitute instead. 
+</p>
+<p class="post-content">
+	This is an area I would recommend researching as you build you site. It's helpful to know the options.
+</p>
+
+<h3>Creating Templates from Code</h3>
+
+<p class="post-content">
+	Log in to your website on WordPress (check out <a href="http://theapplecartproject.com/posts/working-locally-on-wordpress.html">Installing MAMP and WordPress Locally</a>). Create a new page for each page in your static site. For example, Home, About, Blog, and Contact.
+</p>
+<p class="post-content">
+	<strong>If you want your Home page to be a single, static page:</strong> Go into Settings > Reading. Set “Front Page Displays: a static page”. Then set “Front Page: Home”, and “Post Page: Blog.”
+</p>
+<p class="post-content">
+	<strong>If you want your Home page to display blog posts:</strong> Go into Settings > Reading. Set “Front Page Displays: your latest posts”.
+</p>
+<p class="post-content">
+	If your website includes content besides standard posts and pages (like galleries, a portfolio, and content the client will want to update) you will want to add a few plugins to give them that ability. I like using <a href="http://www.advancedcustomfields.com/resources/post-object/">Advanced Custom Fields</a> with <a href="https://wordpress.org/plugins/custom-post-type-ui/">Custom Post Types UI</a>. Take a look at the documentation for these two plugins for more information about using them in your custom WordPress themes. 
+</p>
+
+<h3>Basic Starting Templates</h3>
+
+<p class="post-content">
+	Now we can start coding the templates that will be used for the website. Templates contain the PHP code needed to structure a page, but don’t contain the actual content for pages. The content is generated in the admin area of the WordPress site, so it can be changed dynamically by the client. The code in the templates should only be what is necessary to structure the page, and will not need to be changed.
+</p>
+<p class="post-content">
+	This is a basic list of the templates I use when getting started. Create a folder for your theme at this location: htdocs > Site Name (folder that includes your downloaded WordPress files) > wp-content > themes > Name of your Theme.
+</p>
+
+<ul>
+	<li class="post-content indent">
+	<strong>Home Page</strong>: front-page.php (The home page if your website has a static front page) or home.php (The home page if your website displays blog posts on the home page)
+	</li>
+
+	<li class="post-content indent">
+	<strong>Default Page</strong>: index.php (WordPress will look for this if you are missing a specific page in your folder)
+	</li>
+
+	<li class="post-content indent">		
+	<strong>Header and Footer Templates</strong>: header.php and footer.php (These will be linked to on your other pages using get_header(); and get_footer();)
+	</li>
+
+	<li class="post-content indent">
+	<strong>Stylesheet</strong>: style.css (This page will include meta information in a comment at the top that WordPress needs to recognize it as a theme. Once you add this comment, you can select it as the theme from WordPress admin. See below for setting up the meta data.)
+	</li>
+</ul>
+<p class="post-content">
+	This post doesn’t go into detail of all the code in the templates, but I would like to cover a single template for the index.php, which is the default page that WordPress looks for.
+</p>
+<p class="post-content">
+	This includes get_header() and get_footer(). Both of these need to be included on each page for your website.
+</p>
+<p class="post-content">
+	I wrap my page content in a div called “content-wrapper”, so I need to include this in my index.php template so my pages will all receive the styles given to “content-wrapper”. In later posts, you will see how to include other HTML code needed to apply your styles. Before these bits of code are included, you won’t see your styles on the website. This is because there is nothing for WordPress to reference in order to see these styles.
+</p>
+<p class="post-content">
+	An If Loop that contains a While Loop. This lets WordPress reference the content created in the WordPress admin interface and apply it to each page. Notice the line of code that will display if the page doesn’t contain content.
+</p>
+<p class="post-content">
+	The loop ends, and the “content-wrapper” div is closed. Everything on this page will be generated from WordPress, except for whatever elements need to be included to receive styles.
+</p>
+
+<h3>Setting Your Theme to Display</h3>
+
+<p class="post-content">
+	In style.css, we need metadata for WordPress to recognize the theme. Place this text in a comment at the beginning of your file and fill in the information for your theme. Below this, you can include your CSS from your static site. 
+</p>
+<p class="post-content">
+	<i>Theme Name: Site Name<br>
+	Theme URI: http://localhost/SiteName/<br>
+	Description: A custom WordPress site for XXXX<br>
+	Author: Your Name<br>
+	Author URI: Your Website Name<br>
+	Version: 1.0<br>
+	License: GNU General Public License v3.0<br>
+	License URI: http://www.gnu.org/licenses/gpl-w.0.html<br></i>
+</p>
+<p class="post-content">
+	WordPress will look for a specific file in each of your themes folders to set as the image for that theme. If you have a static site, take a screenshot of the home page and resize it to 600 x 450 pixels. Place it in the folder of the theme you are creating and name it screenshot.png. (It must have this name for WordPress to recognize it as the image for the theme.) Once the image is in the folder, you can go into your WordPress Dashboard to Appearance > Themes and your theme should display. Click to activate, and your theme will be ready to go! 
+</p>
+<p class="post-content">
+	I'll be following up with more specific information about finishing a theme, and also how to launch the site once it's finished. Let me know how this works for you!
+</p>

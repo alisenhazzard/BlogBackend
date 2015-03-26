@@ -1,0 +1,89 @@
+---
+{
+    title: "Installing MAMP and WordPress Locally",
+    description: 'Installing and working on WordPress locally is a good way to build a theme or customize an existing one before hosting it on a server. If you’ve designed a website with static HTML and CSS, you can transfer your code into PHP within the downloaded WordPress files, experiment with plugins, and perfect the design of a site before needing to worry about FTP files, purchasing a domain name, and launching the site. Here is a step-by-step installation process for downloading MAMP and WordPress to start working locally.',
+    slug: "installing-mamp-and-wordpress-locally",
+    tags: ["WordPress"],
+    created: "2015-01-14"
+}
+---
+<p class="post-content">
+	Installing and working on WordPress locally is a good way to build a theme or customize an existing one before hosting it on a server. If you’ve designed a website with static HTML and CSS, you can transfer your code into PHP within the downloaded WordPress files, experiment with plugins, and perfect the design of a site before needing to worry about FTP files, purchasing a domain name, and launching the site. Here is a step-by-step installation process for downloading MAMP and WordPress to start working locally.
+</p>
+
+<h3>1. Download MAMP</h3>
+
+<p class="post-content">
+	Fist, you need to download <a href="http://www.mamp.info/en/downloads/" target="blank">MAMP</a> for Mac, or <a href="https://www.apachefriends.org/index.html" target="blank">XAMPP</a> for Windows. (Since I’m working from a Mac, this tutorial uses MAMP.) MAMP installs a local server on your computer. This is a good option if you're just starting to work with WordPress, because you won’t need to host your website until you finish your theme and you're ready to launch it.
+</p>
+<p class="post-content">
+	Navigate to the MAMP folder (in Applications) and locate the <strong>htdocs</strong> folder. This is where you will be building your WordPress theme. (Since we frequently use this folder, I have it under my Finder Favorites for easy access.) 
+</p>
+
+<h3>2. Download WordPress</h3>
+
+<p class="post-content">
+	Next, download the latest version of <a href="http://wordpress.org/" target="blank">WordPress</a>. Unzip the folder once it downloads. 
+</p>
+<p class="post-content">
+	Create a new folder in the htdocs folder and name it after your project. Drag all the files from the unzipped WordPress download into this new folder.
+</p>
+
+<h3>3. Launch MAMP</h3>
+
+<p class="post-content">
+	Now we're ready to launch MAMP. Find the MAMP application and open it. It will open a window to <em>Start Servers</em>, and then you will be prompted for your password (for your local machine). Once your servers are running, MAMP will open a window in the browser to let you know it has been successfully installed, and from here you can access different admin tools.
+</p>
+<p class="post-content">
+	<strong>A good thing to know:</strong> If you accidentally close the admin tools page, you can go to the MAMP application and <em>Open Start Page</em> to get back.
+</p>
+
+<h3>4. Create a New Database</h3>
+
+<p class="post-content">
+	From the tools dropdown, select <strong>phpMyAdmin</strong>. This will take you to the local server (<em>localhost</em>) where you can make a new database for the folder you created in htdocs. Select <strong>Databases</strong> at the top, and make a new database (remember the name you give it so you can enter this once we reach the WordPress page.)
+</p>
+
+<h3>5. Configure WordPress</h3>
+
+<p class="post-content">
+	Open a new window in the browser and enter <em>localhost</em> as the url. This will take you to the server, and it will display "Index of/“ and list the folders in htdocs.
+</p>
+<p class="post-content">
+	Click on your new project folder. It will instruct you to create a new Configuration File. Click to create, read the instructions on the next page, and click <strong>Let’s Go!</strong>
+</p>
+<p class="post-content">
+	On the next page, enter the name of the database you just created. For username and password, since we are just working locally, you can enter “root”. Leave Database host as "localhost", and give the table prefix a unique name; here I use my project name, such as wpProject.
+</p>
+
+<h3>6. Install WordPress</h3>
+
+<p class="post-content">
+	<strong>Click to run the install.</strong> We’re now at the “famous five minute WordPress installation process”! Enter the name of your new website, create a username and password (these shouldn’t be "root", but something you can use to log in when you want to make changes to your site.) Go through and fill in your email, and make sure to uncheck the box to let search engines index the site (we’re working locally, but if our IP address is exposed publicly we don't want SE's to be able to access the site until we launch it.) Then, click to Install WordPress.
+</p>
+
+<h3>7. Working Locally</h3>
+
+<p class="post-content">
+	Log in, and now you’re in WordPress locally! From here, you’ll be able to create a new theme or build a site with an existing theme. You can follow these steps to go in and make changes to your WordPress site:
+	<ol class="post-content">
+		<li>
+			1. Launch Mamp.
+		</li>
+		<li>
+			2. Start Servers.
+		</li>
+		<li>
+			3. Go to localhost and select the folder you want to work in.
+		</li>
+		<li>
+			4. You’ll be directed to your home page, and you can go into your dashboard to make changes.
+		</li>
+		<li>
+			5. When you’re done working, make sure you Stop Servers.
+		</li>
+	</ol>
+</p>
+<p class="post-content">
+	I've found this process to work for me - I'm happy to hear other tips or processes that you find helpful when working locally with WordPress!
+</p>

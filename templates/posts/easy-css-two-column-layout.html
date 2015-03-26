@@ -1,0 +1,93 @@
+---
+{
+    title: "Easy CSS Layout - Two Column Photo Album",
+    description: "There are many effective ways to style photos on a website using responsive design. I have experimented with <a href='http://masonry.desandro.com/' target='blank'alt='Masonry'>Masonry</a> (a JavaScript grid layout), <a href='http://css-tricks.com/snippets/css/a-guide-to-flexbox/' target='blank'>Flexbox</a>, and other grid-based layouts for the structure of my photo albums, but these techniques don't work for some sites. Here is a floating two column structure. The limited amount of code needed is also a plus.",
+    slug: "easy-css-two-column-layout",
+    tags: ["Web Design", "CSS"],
+    created: "2014-07-15"
+}
+---
+<p class="post-content">
+	There are many effective ways to style photos on a website using responsive design. I have experimented with <a href="http://masonry.desandro.com/" target="blank" alt="Masonry">Masonry</a> (a JavaScript grid layout), <a href="http://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="blank">Flexbox</a>, and other grid-based layouts for the structure of my photo albums, but these techniques don't work for some sites. Here is a floating two column structure. The limited amount of code needed is also a plus.
+</p>
+<p class="post-content">
+	I wanted to do a little code takeaway and share the code that ended up working for me - it’s pretty simple to implement, and it works great with a small adjustment in the media queries for different screen resolutions.
+</p>
+<pre><code class="html">HTML
+&lt;div class="col-wrapper"&gt;
+	&lt;div class="col-left"&gt;
+		&lt;img src="[img location]" class="col-img"/&gt;
+		&lt;img src="[img location]" class="col-img"/&gt;
+		&lt;img src="[img location]" class="col-img"/&gt;
+	&lt;/div&gt;
+	&lt;div class="col-right"&gt;
+		&lt;img src="[img location]" class="col-img"/&gt;
+		&lt;img src="[img location]" class="col-img"/&gt;
+		&lt;img src="[img location]" class="col-img"/&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p class="post-content"></p>
+
+<pre><code class="css">CSS
+.col-img {
+	display: table;
+	margin: 20px 10px;
+	max-width: 250px;
+}
+.col-left,
+.col-right {
+	float: left;
+	width: 50%;
+}
+.col-wrapper {
+	display: table;
+	margin: 20px auto;
+	max-width: 810px;
+}
+
+@media screen and (min-width: 990px){
+	.col-img {
+		max-width: 330px;
+	}
+}
+</code></pre>
+
+<p class="post-content">
+	This is what the code looks like with images in place:
+</p>
+
+<div class="col-wrapper">
+	<div class="col-left">
+		<img src="/static/build/img/blogimages/FERN/fern1.jpg" class="col-img" alt="Image of Fern Canyon" />
+		<img src="/static/build/img/blogimages/FERN/fern2.jpg" class="col-img" alt="Image of Fern Canyon" />
+		<img src="/static/build/img/blogimages/FERN/fern3.jpg" class="col-img" alt="Image of Fern Canyon" />
+	</div>
+	<div class="col-right">
+		<img src="/static/build/img/blogimages/FERN/fern4.jpg" class="col-img" alt="Image of Fern Canyon" />
+		<img src="/static/build/img/blogimages/FERN/fern5.jpg" class="col-img" alt="Image of Fern Canyon" />
+		<img src="/static/build/img/blogimages/FERN/fern6.jpg" class="col-img" alt="Image of Fern Canyon" />
+	</div>
+</div>
+
+<p class="post-content">
+<h3>A few notes:</h3>
+    <ol class="post-content">
+        <li>
+        	I <strong>formatted my photos</strong> to be small to begin with, since the max-width in the media query is only 330px. This will keep your load-time fast, which is great when you have tons of images.
+        </li>
+        <li>
+        	If you want, you can adjust the layout to be <strong>single-column</strong> in small screen sizes, and add a media query to give it a two-column structure when the screen reaches a larger size.
+        </li>
+		<li>
+			As it is, the photo columns start to <strong>overlap</strong> when the screen reaches about 600px, so you'll want to play with the formatting for smaller screen sizes.
+		</li>
+		<li>
+			Because you can use images of any size, the <strong>column heights</strong> don’t line up on their own; you’ll probably need to rearrange the photos so the columns end at the same place. The good news is, go ahead and add as many images as you want!
+		</li> 
+    </ol>
+</p>
+<p class="post-content">
+	There you go guys! Let me know how it works for you. <a href="http://twitter.com/alisenhazzard" target="blank">@alisenhazzard</a></p>
+</p>

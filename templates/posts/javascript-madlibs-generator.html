@@ -1,0 +1,107 @@
+---
+{
+    title: "JavaScript MadLibs Generator",
+    description: 'One of my new favorite ways to use Illustrator is as a tracing tool. As a kid, I would trace coloring book pages for my friends so we could all color the same pictures together (<a href="https://www.google.com/search?q=lisa+frank&es_sm=91&source=lnms&tbm=isch&sa=X&ei=zCqbU9zGCZKqyATJ6YKoDg&ved=0CAgQ_AUoAQ&biw=1350&bih=713#q=lisa+frank+coloring+pages&tbm=isch&imgdii=_" target="blank">Lisa Frank</a>, anyone?).',
+    slug: "javascript-madlibs-generator",
+    tags: ["JavaScript"],
+    created: "2014-08-22"
+}
+---
+<p class="post-content">
+	Mad Libs was one of my favorite road trip games as a kid. (Growing up with a younger brother, our Mad Libs were filled with gross and vivid adjectives, lots of “butts” in the nouns category, and all kinds of words related to flatulence - who knew there were so many?!) Even though you can fill in the words before you read the story, I loved to fill them out in line with the text, so I could see how hilarious they were going to be before everyone else did. If you liked to see the fun ahead of time too, here is a beginner Javascript Mad Libs Generator that you can use to amuse your grown-up self. All you need to do is write a short story (or just a sentence), create some arrays, and randomly assign them in place of text. (Verbs relating to flatulence encouraged, though not included).
+</p>
+
+<h3>The HTML File</h3>
+
+<p class="post-content">
+	First, create an HTML file then open it in your browser. Bring up your developer console (Command/Option/J on a Mac, and Control/Shift/J on a PC) so you can see your code after you write the application. Normally, it’s better to create a Javascript file and link to it in an HTML file. For this project though, I only created an HTML file and included my Javascript code within script tags, to keep things simple.
+</p>
+
+<h3>Mad Libs Prompt</h3>
+
+<p class="post-content">
+	Also, to keep it short I used a single sentence for my output. “[Proper noun] and [proper noun] [verb] [adverb] over the [place].” For each option, we’ll make an array of words to choose from in order to make a random sentence. (You’ll see from the example that it would also be easy to write a longer story and choose from the same arrays if you wanted a longer Mad Lib.)
+</p>
+
+<h3>Create Arrays</h3>
+
+<p class="post-content">
+	For each type of word (noun, verb, etc.) create a variable containing an array of strings. These were the arrays I created:
+</p>
+<pre class="post-content"><code class='javascript'>
+  var nouns = ["Alisen", "Erik", "Brett", "Karissa"];
+  var nouns2 = ["Penny", "Fiddlesticks", "Hrothgar", "Snowy"];
+  var verbs = ["ran", "hopped", "galloped", "skittled"];
+  var adverbs = ["quickly", "eagerly", "hesitantly", "slowly"];
+  var places = ["bridge", "trail", "hill", "beach"];
+
+</code></pre>
+<p class="post-content">	
+	(This is clearly a charming story about people and their pets, actively pursuing an outdoor adventure.) This should be the first thing inside of your script tags.
+</p>
+
+<h3>The Application</h3>
+
+<pre class="post-content"><code class='javascript'>
+  var nouns = ["Alisen", "Erik", "Brett", "Karissa"];
+  var nouns2 = ["Penny", "Fiddlesticks", "Hrothgar", "Snowy"];
+  var verbs = ["ran", "hopped", "galloped", "skittled"];
+  var adverbs = ["quickly", "eagerly", "hesitantly", "slowly"];
+  var places = ["bridge", "trail", "hill", "beach"];
+  
+  function returnSentence(){
+    var finalString = "";
+  
+    // Pick random elements from different arrays
+    finalString = 
+    nouns[Math.floor(Math.random() * nouns.length)] + " and " +
+    nouns2[Math.floor(Math.random() * nouns2.length)] + " " +
+    verbs[Math.floor(Math.random() * verbs.length)] + " " +
+    adverbs[Math.floor(Math.random() * adverbs.length)] + 
+    " over the " +
+    places[Math.floor(Math.random() * places.length)] + ".";
+  
+    return finalString;
+  }
+  
+  // Get string
+  console.log( returnSentence() );
+
+</code></pre>
+<p class="post-content">
+	This function, <strong>returnSentence()</strong>, contains the variable <strong>finalString</strong>, which is an empty string where we will be writing our Mad Lib. Within <strong>finalString</strong>, we have the structure of our sentence, including each random member of the arrays added on to one another with a few lines of text.
+</p>
+<p class="post-content">
+	This is the essential text that will go to each array and randomly choose a word:<br>
+</p>
+<pre class="post-content"><code lang='js'>
+  nouns[Math.floor(Math.random() * nouns.length)]
+
+</code></pre>
+<p class="post-content">
+	<strong>Math.random()</strong> will return a random value between 0 and 1 (not including 1), which we then multiply by the number of items in the array (in this example, <strong>nouns.length</strong>). Since we have 4 items in this array, we will get back a number up to, but not including 4. <strong>Math.floor()</strong> rounds the value down to the closest integer (eg. 3.9 becomes 3).
+</p>
+<p class="post-content">
+	In this case, the largest integer possible is 3, since we can only ever reach the length of the array minus 1. How does this work? In the arrays, the position of each member starts with 0. In the nouns array, the positions would be: [Alisen=0, Erik=1, Brett=2, Karissa=3]. Therefore, the code will result in the position of one value of the array . If our code results in nouns[2], the resulting code would give us “Brett”, which is in the [2] position of the nouns array.
+</p>
+<p class="post-content">
+	We repeat this code for each array, using "+" to join the values, and add additional words and spaces where needed. Then, we want to return <strong>finalString</strong>, which will give us the complete sentence with our random words.
+</p>
+
+<h3>Call the Function</h3>
+
+<p class="post-content">
+	Now that we have our function ready to return a random selection of words, we need to call it and print it to the console. Simply use <strong>console.log(returnSentence());</strong> at the end of your code before you close the script tag. Go back into the dev tools in your browser and refresh the page. Each time it refreshes, the words change! Excitement abounds!
+</p>
+
+<h3>Next Steps</h3>
+
+<p class="post-content">
+	You can probably see other fun ways to add on to this application, like writing longer paragraphs and experimenting with using the same lists of words in different places. If you reuse these arrays in multiple places in your story, remember that it’s likely that words will repeat, since we didn’t include anything in the function to remove a word once we use it. (This is another cool thing you could add to your code for more road-trip worthy Mad Libs!) 
+</p>
+<p class="post-content">
+	I love simple Javascript projects - if you have any others send 'em my way. <a href="http://twitter.com/alisenhazzard" target="blank">@alisenhazzard</a> 
+</p>
+<p class="post-content">
+	<a href="http://s3.amazonaws.com/theapplecartproject.com/examples/madlibs/js_mad_libs.html" target="blank">View Application</a>
+</p>
