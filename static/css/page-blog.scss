@@ -339,7 +339,17 @@
 			border: 1px solid #009676 !important;
 		}
 	}
-
+	@media screen and (min-width: 1500px){
+		.right-wrapper{
+			margin-left: 13%;
+		}
+		.post-wrapper {
+			max-width: 900px;
+		}
+		.post-content {
+			max-width: 900px;
+		}
+	}
 
 
 

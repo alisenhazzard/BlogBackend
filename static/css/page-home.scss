@@ -9,7 +9,7 @@
 	HEADER
 	*******************************/
 	.main-header {
-		height: 570px;
+		min-height: 100%;
 		background:	linear-gradient(#C84309, transparent 90%),
 					linear-gradient(0deg, #000117, transparent),
 					#C84309 url('/static/build/img/beach.jpg') no-repeat center;
@@ -131,6 +131,7 @@
 	ABOUT
 	*******************************/
 	.about-wrapper {
+		min-height: 100%;
 		background:	linear-gradient(#19D2C4, transparent 90%),
 					linear-gradient(0deg, #101524, transparent);
 		color: #fff;
@@ -199,7 +200,6 @@
 			font-size: 1.2rem;
 		}
 		.main-header {
-			height: 750px;
 			background:	linear-gradient(#C86709, transparent 90%),
 				linear-gradient(0deg, #000117, transparent),
 				#C86709 url('/static/build/img/beach.jpg') no-repeat center;
