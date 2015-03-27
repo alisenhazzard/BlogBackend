@@ -1,83 +1,83 @@
 {{ include _top.html }}
 
 <div class="right-wrapper">
-		<nav>
-			<a href="/">Home</a>
-			<a href="/blog">Blog</a>
-		</nav>
-		<div class="blog-header">
-			<h1>Alisen Hazzard</h1>
-			<h2 class="script blog-script">the Blog</h2>
-		</div>
-		
-		<div class="clearfix"></div>
+	<nav>
+		<a href="/">Home</a>
+		<a href="/blog">Blog</a>
+	</nav>
+	<div class="blog-header">
+		<h1>Alisen Hazzard</h1>
+		<h2 class="script blog-script">the Blog</h2>
+	</div>
+	
+	<div class="clearfix"></div>
 
 
+    {{ for(postIndex in posts){ }}
+        {{// Possible fields: }}
+        {{// title, slug, created, description, category, tags, timeToRead, content }}
 
+        {{ post = posts[postIndex] }}
 
-        {{ for(postIndex in posts){ }}
-            {{// Possible fields: }}
-            {{// title, slug, created, description, category, tags, timeToRead, content }}
+        <div class="post">
+            <a href="/blog/{{- post.slug }}" title="{{- post.title }}">
+                <h3>{{- post.title }}</h3>
+            </a>
+            <h5>
+                {{- moment(post.created).format('MMMM Do, YYYY') }}
+            </h5>
+            <p class="post-content">Tags: 
+                {{ for(tagIndex in post.tags){ }}
+                    <a href="/blog/tag/{{- post.tagsLower[tagIndex] }}" title="{{- post.tags[tagIndex] }}">
+                        {{- post.tags[tagIndex] }}{{ if(tagIndex < post.tags.length-1){ }}, {{ } }}
+                    </a>
+                {{ } }}
+            </p>
+            <p class="post-content">
+                {{- post.description }}
+            </p>
+            <a href="/blog/{{- post.slug }}" title="{{- post.title }}" class="keep-reading">
+                Keep reading
+            </a>
+        </div>
+    {{ } }}
 
-            {{ post = posts[postIndex] }}
+	<p class="copyright small-text">
+		Copyright &copy; 2015 Alisen Hazzard
+	</p>
+</div>
 
-            <div class="post">
-                <a href="/blog/{{- post.slug }}" title="{{- post.title }}">
-                    <h3>{{- post.title }}</h3>
-                </a>
-                <h5>
-                    {{- moment(post.created).format('MMMM Do, YYYY') }}
-                </h5>
-                <p class="post-content">Tags: 
-                    {{ for(tagIndex in post.tags){ }}
-                        <a href="/blog/tag/{{- post.tagsLower[tagIndex] }}" title="{{- post.tags[tagIndex] }}">
-                            {{- post.tags[tagIndex] }}{{ if(tagIndex < post.tags.length-1){ }}, {{ } }}
-                        </a>
-                    {{ } }}
-                </p>
-                <p class="post-content">
-                    {{- post.description }}
-                </p>
-                <a href="/blog/{{- post.slug }}" title="{{- post.title }}" class="keep-reading">
-                    Keep reading
-                </a>
-            </div>
-        {{ } }}
+<div class="left-wrapper">
+	<div class="posts-wrapper">
+		<h6 class="featured">Featured Posts</h6>
 
-		<p class="copyright small-text">
-			Copyright &copy; 2015 Alisen Hazzard
+		<a href="/blog/portfolio-website-design-process"><h5>Portfolio Website Design Process</h5></a>
+
+		<a href="/blog/installing-mamp-and-wordpress-locally"><h5>Installing MAMP and WordPress Locally</h5></a>
+
+		<a href="/blog/first-steps-developing-wordpress-theme"><h5>First Steps for Developing a WordPress Theme</h5></a>
+
+		<a href="/blog/getting-started-with-seo"><h5>Getting Started with Search Engine Optimization (SEO)</h5></a>
+
+	</div>
+
+	<div class="tag-wrapper">
+		<h6 class="featured">Browse Tags</h6>
+		<p class="tag-content">
+		{{ tags.forEach(function(tag){ }} 
+		    <a href='/blog/tag/{{- util.toLower(tag) }}'>
+		        {{- tag }}
+		    </a>
+		{{ }) }}
 		</p>
+
 	</div>
 
-	<div class="left-wrapper">
-		<div class="posts-wrapper">
-			<h6 class="featured">Featured Posts</h6>
-
-			<a href="portfolio-website-design-process.html"><h5>Portfolio Website Design Process</h5></a>
-
-			<a href="installing-mamp-and-wordpress-locally.html"><h5>Installing MAMP and WordPress Locally</h5></a>
-
-			<a href="blogposts/first-steps-to-developing-a-wordpress-theme.html"><h5>First Steps for Developing a WordPress Theme</h5></a>
-
-			<a href="blogposts/getting-started-with-seo.html"><h5>Getting Started with Search Engine Optimization (SEO)</h5></a>
-
-		</div>
-
-		<div class="tag-wrapper">
-			<h6 class="featured">Browse Tags</h6>
-			{{ tags.forEach(function(tag){ }} 
-			    <a href='/blog/tag/{{- util.toLower(tag) }}' target='_blank'>
-			        {{- tag }}
-			    </a>
-			{{ }) }}
-
-		</div>
-
-		<!--<div class="light">
-			<form>
-				<span><input type="text" class="search" placeholder="Search..."></span>
-			</form>
-		</div>-->
-	</div>
+	<!--<div class="light">
+		<form>
+			<span><input type="text" class="search" placeholder="Search..."></span>
+		</form>
+	</div>-->
+</div>
 
 {{ include _bottom.html }}

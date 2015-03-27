@@ -4,7 +4,8 @@
 //
 // ======================================
 .page-blog,
-.page-post {
+.page-post,
+.page-posts-by-tag {
 	color: #333;
 	
 	.blog-header {
@@ -77,6 +78,13 @@
 	}
 
 	/*****************************
+	COPYRIGHT
+	*****************************/
+	.copyright {
+		margin-top: 10%;
+	}
+
+	/*****************************
 	SEARCH BOX
 	*****************************/
 	.search { 
@@ -126,12 +134,17 @@
 	}
 	.post-wrapper {
 		border-bottom: 1px solid #ddd;
+		padding-bottom: 4%;
+	}
+	.post-content,
+	.tag-wrapper{
 		margin: 4% 3%;
 		max-width: 600px;
-		padding-bottom: 4%;
 	}
 	.post-wrapper h1 {
 		border-bottom: 1px solid #ddd;
+		font-size: 2em;
+		line-height: 1.1em;
 		margin-bottom: 20px;
 		padding-bottom: 20px;
 		text-align: center;
@@ -156,10 +169,54 @@
 	}
 
 	/*****************************
-	TAG PAGE
+	TAG STYLES
 	*****************************/
 	.tag-sort {
 		border-bottom: 1px solid #ddd;
+	}
+	.tag-wrapper .tag-content {
+		font-size: .8em;
+	}
+	.tag-wrapper .social-links {
+		font-size: 25px;
+	}
+	.tag-wrapper .social-links i {
+		margin-right: 30px;
+	}
+	.tag-wrapper .social-links a:hover {
+		color: #74C2B1;
+	}
+	.tag-wrapper .tag-content a {
+		background-color: rgba(255, 255, 255, 0.972549);
+		border: 1px solid #ddd;
+		border-radius: 2px;
+		color: rgba(0, 0, 0, 0.6);
+		display: inline-block;
+		font-size: 13px;
+		height: 25px;
+		line-height: 20px;
+		margin-bottom: 8px;
+		margin-right: 8px;
+		padding: 3px 10px;
+		-moz-transition: all 350ms ease;
+		-webkit-transition: all 350ms ease;
+		-o-transition: all 350ms ease;
+		transition: all 350ms ease;
+	}
+	.tag-wrapper .tag-content a:hover {
+		background: #85DDCA;
+		border: 1px solid #009676;
+		-moz-transition: all 350ms ease;
+		-webkit-transition: all 350ms ease;
+		-o-transition: all 350ms ease;
+		transition: all 350ms ease;
+	}
+
+	/*****************************
+	DISQUS
+	*****************************/
+	#disqus-wrapper {
+		margin-top: 10%;
 	}
 
 	/*****************************
@@ -184,10 +241,6 @@
 			float: left;
 			margin-left: 20px;
 			margin-top: -6px;
-		}
-		.post-wrapper {
-			margin: 6% auto;
-			max-width: 700px;
 		}
 		.post-wrapper h3 {
 			margin-top: 60px;
@@ -215,6 +268,24 @@
 		}
 		nav	a {
 			margin-right: 25px;
+		}
+		.tag-wrapper .tag-content {
+			float: left;
+			font-size: 1em;
+		}
+		.tag-wrapper .social-links {
+			float: right;
+		}
+		.tag-wrapper .social-links i {
+			margin-left: 30px;
+		}
+	}
+
+	@media screen and (min-width: 768px){
+		.post-wrapper,
+		.tag-wrapper {
+			margin: 60px auto 0;
+			max-width: 700px;
 		}
 	}
 
@@ -259,31 +330,6 @@
 		}
 		.posts-wrapper h5 {
 			margin-top: 20px;
-		}
-		.tag-wrapper a {
-			background-color: rgba(255, 255, 255, 0.972549);
-			border: 1px solid #ddd;
-			border-radius: 2px;
-			color: rgba(0, 0, 0, 0.6);
-			display: inline-block;
-			font-size: 13px;
-			height: 25px;
-			line-height: 20px;
-			margin-bottom: 8px;
-			margin-right: 8px;
-			padding: 3px 10px;
-			-moz-transition: all 350ms ease;
-			-webkit-transition: all 350ms ease;
-			-o-transition: all 350ms ease;
-			transition: all 350ms ease;
-		}
-		.tag-wrapper a:hover {
-			background: #85DDCA;
-			border: 1px solid #009676;
-			-moz-transition: all 350ms ease;
-			-webkit-transition: all 350ms ease;
-			-o-transition: all 350ms ease;
-			transition: all 350ms ease;
 		}
 		.light{
 			padding:40px 0px;

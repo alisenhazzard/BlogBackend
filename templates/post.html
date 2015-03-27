@@ -4,23 +4,32 @@
 
 <div class="post-wrapper">
 	<h1>{{- post.title }}</h1>
+  <p class="small-text" style="text-align:right;">Posted on {{- moment(post.created).format('MMMM Do, YYYY') }} </p>
  
    <!--<div class="read-time small-text">
 	    Time to read: {{- post.timeToRead }} minutes
 	</div>-->
 
 	 {{- post.content }}
+
 </div>
 
-<div class="tag-wrapper post-wrapper">
-   <p class="post-content">Tagged in:
+<div class="tag-wrapper">
+   <p class="tag-content">Tagged in:
         {{ for(tagIndex in post.tags){ }}
             <a href="/blog/tag/{{- post.tagsLower[tagIndex] }}" title="{{- post.tags[tagIndex] }}">
-                {{- post.tags[tagIndex] }}{{ if(tagIndex < post.tags.length-1){ }}, {{ } }}
+                {{- post.tags[tagIndex] }}{{ if(tagIndex < post.tags.length-1){ }} {{ } }}
             </a>
         {{ } }}
-    </p> 
+    </p>
+    
+    <div class="social-links">
+        <a href="#" target="blank" title="Share on Twitter"><i class="fa fa-twitter"></i></a>
+        <a href="#" target="blank" title="Share on Facebook"><i class="fa fa-facebook"></i></a>
+        <a href="#" title="Share by Email"><i class="fa fa-envelope-o"></i></a>
+    </div>
 
+    <div class="clearfix"></div>
 
 
   <!-- Discuss -->
@@ -39,6 +48,9 @@
   </script>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
+<p class="copyright small-text">
+  Copyright &copy; 2015 Alisen Hazzard
+</p>
 
 </div>
 
