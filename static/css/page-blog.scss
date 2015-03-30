@@ -28,7 +28,8 @@
 	RIGHT WRAPPER
 	*****************************/
 	.right-wrapper {
-		margin: 0 15px;
+		margin: 0 auto;
+		width: 90%;
 	}
 	.post {
 		border-bottom: 1px solid #ddd;
@@ -39,18 +40,18 @@
 	.posts-wrapper h5 {
 		letter-spacing: 0;
 		line-height: inherit;
-		-moz-transition: all 350ms ease;
-		-webkit-transition: all 350ms ease;
-		-o-transition: all 350ms ease;
-		transition: all 350ms ease;
+		-moz-transition: all 150ms ease;
+		-webkit-transition: all 150ms ease;
+		-o-transition: all 150ms ease;
+		transition: all 150ms ease;
 	}
 	.post h3:hover,
 	.posts-wrapper h5:hover {
 		color: #74C2B1;
-		-moz-transition: all 350ms ease;
-		-webkit-transition: all 350ms ease;
-		-o-transition: all 350ms ease;
-		transition: all 350ms ease;
+		-moz-transition: all 150ms ease;
+		-webkit-transition: all 150ms ease;
+		-o-transition: all 150ms ease;
+		transition: all 150ms ease;
 	}
 	.post p {
 		margin: 20px 0;
@@ -58,18 +59,18 @@
 	.keep-reading,
 	.post-content a {
 		color: #74C2B1;
-		-moz-transition: all 350ms ease;
-		-webkit-transition: all 350ms ease;
-		-o-transition: all 350ms ease;
-		transition: all 350ms ease;
+		-moz-transition: all 150ms ease;
+		-webkit-transition: all 150ms ease;
+		-o-transition: all 150ms ease;
+		transition: all 150ms ease;
 	}
 	.keep-reading:hover,
 	.post-content a:hover {
 		color: #5FA092;
-		-moz-transition: all 350ms ease;
-		-webkit-transition: all 350ms ease;
-		-o-transition: all 350ms ease;
-		transition: all 350ms ease;
+		-moz-transition: all 150ms ease;
+		-webkit-transition: all 150ms ease;
+		-o-transition: all 150ms ease;
+		transition: all 150ms ease;
 	}
 	/*****************************
 	LEFT WRAPPER
@@ -128,10 +129,10 @@
 	}
 	nav a:hover {
 		color: #74C2B1;
-		-moz-transition: all 350ms ease;
-		-webkit-transition: all 350ms ease;
-		-o-transition: all 350ms ease;
-		transition: all 350ms ease;
+		-moz-transition: all 150ms ease;
+		-webkit-transition: all 150ms ease;
+		-o-transition: all 150ms ease;
+		transition: all 150ms ease;
 	}
 	.post-wrapper {
 		border-bottom: 1px solid #ddd;
@@ -140,7 +141,6 @@
 	.post-content,
 	.tag-wrapper{
 		margin: 4% 3%;
-		max-width: 700px;
 	}
 	.post-wrapper h1 {
 		border-bottom: 1px solid #ddd;
@@ -151,10 +151,12 @@
 		text-align: center;
 	}
 	.post-wrapper h3 {
+		margin-bottom: 30px;
 		margin-top: 40px;
 	}
-	.post-content {
-		font-size: 18px;
+	.post-content,
+	.post-content li {
+		font-size: 19px;
 		line-height: 2rem;
 		margin: 24px 0;
 	}
@@ -195,18 +197,18 @@
 		margin-bottom: 8px;
 		margin-right: 8px;
 		padding: 3px 10px;
-		-moz-transition: all 350ms ease;
-		-webkit-transition: all 350ms ease;
-		-o-transition: all 350ms ease;
-		transition: all 350ms ease;
+		-moz-transition: all 150ms ease;
+		-webkit-transition: all 150ms ease;
+		-o-transition: all 150ms ease;
+		transition: all 150ms ease;
 	}
 	.tag-wrapper .tag-content a:hover {
 		background: #85DDCA;
 		border: 1px solid #009676;
-		-moz-transition: all 350ms ease;
-		-webkit-transition: all 350ms ease;
-		-o-transition: all 350ms ease;
-		transition: all 350ms ease;
+		-moz-transition: all 150ms ease;
+		-webkit-transition: all 150ms ease;
+		-o-transition: all 150ms ease;
+		transition: all 150ms ease;
 	}
 
 	/*****************************
@@ -301,7 +303,7 @@
 		}
 	}
 
-	@media screen and (min-width: 990px){
+	@media screen and (min-width: 1040px){
 		.init-link {
 			display: none;
 		}
@@ -315,8 +317,8 @@
 		WRAPPERS
 		*****************************/
 		.right-wrapper {
-			margin-left: 100px;
-			width: 60%;
+			margin-left: 80px;
+			width: 55%;
 		}
 		.left-wrapper {
 			display: inline-block;
@@ -351,6 +353,13 @@
 			border: 1px solid #009676 !important;
 		}
 	}
+
+	@media screen and (min-width: 1320px){
+		.right-wrapper{
+			margin-left: 100px;
+		}
+	}
+
 	@media screen and (min-width: 1500px){
 		.right-wrapper{
 			margin-left: 13%;
