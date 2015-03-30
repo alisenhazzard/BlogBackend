@@ -21,91 +21,99 @@ var Post = mongoose.model('Post');
 // Script
 //
 // ======================================
-// First, drop all the posts
-mongoose.connection.collections.posts.drop( function(err) {
-    // NOTE: err may exist if collection was not already created (this is ok)
-    
-    logger.log('load-blog-posts:dropPosts', 'Posts collection dropped!');
+setTimeout(function(){
 
-    // process and load new data
-    return loadData();
-});
+    // First, drop all the posts
+    if(mongoose.connection.collections.posts){
+        mongoose.connection.collections.posts.drop( function(err) {
+            // NOTE: err may exist if collection was not already created (this is ok)
+            
+            logger.log('load-blog-posts:dropPosts', 'Posts collection dropped!');
 
-// --------------------------------------
-// Load Data
-// --------------------------------------
-function loadData(){
-    // Posts data array
+            // process and load new data
+            setImmediate(loadData);
+        });
+    } else {
+        setImmediate(loadData);
+    }
+
     // --------------------------------------
-    var posts = [];    
-
-    // read files
+    // Load Data
     // --------------------------------------
-    var postDirectory = __dirname + '/../templates/posts/';
+    function loadData(){
+        // Posts data array
+        // --------------------------------------
+        var posts = [];    
 
-    fs.readdir(postDirectory, function(err, files){
-        logger.log('load-blog-posts:readDir', 'files: %j', files);
+        // read files
+        // --------------------------------------
+        var postDirectory = __dirname + '/../templates/posts/';
 
-        var META_REGEX = /^[\s\S ]*---([\s\S]*)---/;
-        
-        // Iterate over each file to process and load data
-        async.each(
-            files,
-            function processFile( file, callback ){
-                if(file.indexOf('.html') === -1){
-                    logger.log('load-blog-posts:skipFile', 'skipping file: ' + file);
-                    return callback();
-                }
-                // read data
-                fs.readFile(postDirectory + file, 'utf8', function(err, data){
-                    logger.log('load-blog-posts:readFile',
-                    'reading file : %j', file);
+        fs.readdir(postDirectory, function(err, files){
+            logger.log('load-blog-posts:readDir', 'files: %j', files);
 
-                    // Get data at top of file
-                    var postData = data.match(META_REGEX);
-                    var post;
-
-                    // get the actual data
-                    postData = postData[1];
-                    if(!postData){
-                        throw new Error('Invalid postData format. Expected --- META ---');
+            var META_REGEX = /^[\s\S ]*---([\s\S]*)---/;
+            
+            // Iterate over each file to process and load data
+            async.each(
+                files,
+                function processFile( file, callback ){
+                    if(file.indexOf('.html') === -1){
+                        logger.log('load-blog-posts:skipFile', 'skipping file: ' + file);
+                        return callback();
                     }
+                    // read data
+                    fs.readFile(postDirectory + file, 'utf8', function(err, data){
+                        logger.log('load-blog-posts:readFile',
+                        'reading file : %j', file);
 
-                    // process postData
-                    postData = postData.replace(/\n/g,'');
-                    // we can trust the data here
-                    postData = eval("(" + postData + ")");
+                        // Get data at top of file
+                        var postData = data.match(META_REGEX);
+                        var post;
 
-                    // Get rid of postData in original data string
-                    data = data.replace(META_REGEX, '');
-
-                    postData.content = data;
-
-                    // update meta fields
-                    postData.slug = postData.slug.toLowerCase();
-                    if(postData.created){
-                        postData.created = new Date(postData.created);
-                    }
-
-                    // Setup the DB object
-                    post = new Post(postData);
-                    
-                    post.save(function(err, res){
-                        if(err){
-                            logger.log('error:load-blog-posts:savedPost',
-                            'error saving post: ' + err);
-                            return callback(err,null);
+                        // get the actual data
+                        postData = postData[1];
+                        if(!postData){
+                            throw new Error('Invalid postData format. Expected --- META ---');
                         }
 
-                        logger.log('load-blog-posts:savedPost',
-                        'saved post successfully | %j', post);
-                        callback(null, res);
+                        // process postData
+                        postData = postData.replace(/\n/g,'');
+                        // we can trust the data here
+                        postData = eval("(" + postData + ")");
+
+                        // Get rid of postData in original data string
+                        data = data.replace(META_REGEX, '');
+
+                        postData.content = data;
+
+                        // update meta fields
+                        postData.slug = postData.slug.toLowerCase();
+                        if(postData.created){
+                            postData.created = new Date(postData.created);
+                        }
+
+                        // Setup the DB object
+                        post = new Post(postData);
+                        
+                        post.save(function(err, res){
+                            if(err){
+                                logger.log('error:load-blog-posts:savedPost',
+                                'error saving post: ' + err);
+                                return callback(err,null);
+                            }
+
+                            logger.log('load-blog-posts:savedPost',
+                            'saved post successfully | %j', post);
+                            callback(null, res);
+                        });
                     });
-                });
-            },
-            function allDone( err, doneRes ){
-                return process.exit(1);
-            }
-        );
-    });
-}
+                },
+                function allDone( err, doneRes ){
+                    return process.exit(0);
+                }
+            );
+        });
+    }
+
+}, 100);
