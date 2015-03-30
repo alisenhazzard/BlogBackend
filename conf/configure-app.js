@@ -21,6 +21,7 @@ var cookieParser = require('cookie-parser');
 var env = nconf.get('NODE_ENV');
 
 var setCacheHeaders = require('../lib/util/set-cache-headers');
+var renderErrors = require('../lib/util/render-errors');
 
 // ejs settings
 var ejs = require('ejs');
@@ -169,7 +170,6 @@ module.exports = function configureApp(app, routeFunctions){
     // -----------------------------------
     app.use(function handleMissingPage(req, res, next){
         logger.log('error:express-app', 'Invalid page requested: ' + req.url);
-        res.sendPrepared(null, {error: true, message: 'Invalid page', 
-            status: 404, date: +new Date()});
+        return renderErrors.page404( req, res );
     });
 };
